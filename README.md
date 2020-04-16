@@ -13,6 +13,7 @@ in room "1" then 2 hours in room "2") and patients will also be assigned to thei
 Program Structure:
 
 The program consists of 13 Classes:
+
 	1.Main: the main class which must be run
 	2.UI: lets user choose options with keyboard input
 	3.ViewGenerating: generates user input for doctor/patient list
