@@ -1,13 +1,34 @@
 # Clinic
-A Clinic with 4 rooms, multiple doctors and patients
+A Clinic with 4 rooms, multiple doctors and patients - implementation in Java (JDK 8).
 
-A clinic has 4 consulting rooms and several doctors. The clinic functions between 7 AM and 19 PM and has each consulting room assigned to a doctor. When the doctor’s shift is over, another doctor will take over the consulting room.A doctor can be identified by first name, last name, age and identification number. Each doctor can consult a single patient at a time and he can work for maximum 7 hours a day. A patient can be identified by first name, last name, age and the reason why he came to the doctor. The reason can be: consultation, treatment or prescription.In order to provide better healthcare, the clinic has a categorizing system for patients using the age as a diferentiating factor, in order to determine the consultation order:
-- Children: 0-1 years
-- Pupil: 1-7 years
-- Student: 7-18 years
-- Adult: > 18 years
-According to the consultation’s reason, each patient will stay in the consulting room for a predefined period of time and he will pay a predefined fee:
-- Consultation: 30 minutes, 50 RON
-- Prescription: 20 minutes, 20 RON
-- Treatment: 40 minutes, 35 RON
+The application starts by running the Main Class which then will use the UI Class to let the user select from the console the options desired to be tested.
+
+Firstly, the lists of doctors and patients must be generated. This is implemented in ViewGenerating CLass, simulating user input of doctors and patients. 
+These lists are not linked with one another, so patients don't have a doctor assigned yet and the rooms are empty. Also doctors do not have shift times assigned to them. For this to happen,
+the option "f1. Print a summary of the doctors" must be selected. This will assign doctors their shift time (of maximum 7 hours), in one room at a time (a doctor can have a shift time of 1 hour
+in room "1" then 2 hours in room "2") and patients will also be assigned to their doctors.
+
+
+
+Program Structure:
+
+The program consists of 13 Classes:
+	1.Main: the main class which must be run
+	2.UI: lets user choose options with keyboard input
+	3.ViewGenerating: generates user input for doctor/patient list
+	4.Controller: validates data to be sent to repositorie, raises exceptions if necessary 
+	5.Repositories: gestionates and stores data in form of List<>, saves data to files
+		5a.DoctorRepository: handles data for model class Doctor
+		5b.PatientRepository: handles data for model class Patient
+		5c.RoomRepository: handles data for model class Room
+	6.Model Classes:
+		6a.Doctor
+		6b.Patient
+		6c.Room
+	7.Consultation: enum representing the reasons a patient came to the clinic
+	8.Exceptions:
+		8a.DataAlreadyExists: thrown if the data was already inserted
+		8b.InvalidDataException: thrown if the data input is invalid (eg. negative age)
+
+
 
