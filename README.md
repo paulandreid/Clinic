@@ -1,7 +1,7 @@
 # Clinic
 A Clinic with 4 rooms, multiple doctors and patients - implementation in Java (JDK 8).
 
-![project-image.sjpg](https://github.com/paulandreid/Clinic/blob/master/project-image.jpg)
+![project-image.sjpg](project-image.jpg)
 
 The application starts by running the Main Class which then will use the UI Class to let the user select from the console the options desired to be tested.
 
